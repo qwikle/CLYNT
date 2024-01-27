@@ -1,0 +1,23 @@
+{
+    "extends": "../../tsconfig.json",
+
+    "include": ["src/**/*.ts"],
+
+    "exclude": ["node_modules"],
+
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+        "target": "ESNext",
+        "outDir": "build/",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+
+        "plugins": [
+            {
+                "name": "@rollup/plugin-typescript"
+            }
+        ]
+    }
+}

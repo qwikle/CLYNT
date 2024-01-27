@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "name": "{{name}}",
+      "path": "."
+    },
+    {{layers}}
+  ],
+  "settings": {}
+}

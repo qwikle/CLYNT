@@ -1,0 +1,26 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.0",
+  "main": "build/src/index.js",
+  "author": "{{author}}",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && yarn run rollup",
+    "rollup": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.5",
+    "nodemon": "^3.0.3",
+    "rollup": "^4.9.5",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "types": "build/src/index.d.ts"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "{{author}}",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prestart": "yarn install",
+    "start": "lerna run start",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "graph": "nx graph",
+    "lint:fix": "eslint --fix --ext .ts . --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^7.0.0-alpha.0",
+    "eslint": "^8.56.0",
+    "lerna": "^8.0.2",
+    "nx": "^17.2.8",
+    "tslib": "^2.6.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

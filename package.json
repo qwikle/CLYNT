@@ -1,0 +1,32 @@
+{
+  "name": "CLYNT",
+  "version": "1.0.0",
+  "description": "CLI tool to create a clean architecture workspace",
+  "main": "index.js",
+  "author": "qwikle",
+  "license": "MIT",
+  "bin": {
+    "clynt": "index.js"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node bin/test.js"
+  },
+  "dependencies": {
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "figlet": "^1.7.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@japa/assert": "^2.0.0-2",
+    "@japa/expect-type": "^2.0.0-1",
+    "@japa/file-system": "^2.0.0-2",
+    "@japa/runner": "^3.0.0-9",
+    "@japa/snapshot": "^2.0.0-2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
