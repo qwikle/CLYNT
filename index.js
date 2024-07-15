@@ -6,13 +6,14 @@ import chalk from 'chalk';
 import {exec} from 'child_process';
 import boxen from 'boxen';
 import { licencesPrompt, useDefaultLayer, ListOfSpecifiLayers } from './src/cmd/prompt.js';
-import {  createRootWorkspaceJson, buildLayers, createFolder } from './src/cmd/builder.js';
+import {  createRootWorkspaceJson, buildLayers, createFolder, hasPackagesFolder, CreateLayer, getAuthorName } from './src/cmd/builder.js';
 import { checkYarn } from './src/cmd/checker.js';
 import { CLYNT } from './src/cmd/figlet.js';
 
 CLYNT();
 
 const options = program.opts();
+
 async function run(){
   try{
 await checkYarn();
@@ -57,11 +58,17 @@ if (options.new) {
     ${chalk.cyanBright('Have fun!')}
     `,
       {borderColor: "cyan", title: `${options.new}`, titleAlignment: "center", padding: 1, margin: 1, borderStyle:"double"}));
-  })
+  });
 }
-console.log(`installing dependencies...`)
+
 if (options.add) {
-  console.log('add');
+  if(await hasPackagesFolder()){
+    const author = await getAuthorName();
+    await CreateLayer({name: [options.add], author});
+    console.log(boxen(`
+    Layer ${chalk.greenBright(options.add)} created ${chalk.greenBright('successfully')}!
+    `));
+  }
 }
 }
 
