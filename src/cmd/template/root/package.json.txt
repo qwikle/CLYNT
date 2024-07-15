@@ -14,12 +14,15 @@
     "lint:fix": "eslint --fix --ext .ts . --ignore-path .gitignore"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.8",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^7.0.0-alpha.0",
     "eslint": "^8.56.0",
-    "lerna": "^8.0.2",
-    "nx": "^17.2.8",
-    "tslib": "^2.6.2"
+    "lerna": "^8.1.2",
+    "nx": "^18.3.4",
+    "tslib": "^2.6.2",
+    "fp-ts": "^2.16.6"
   },
   "workspaces": [
     "packages/*"
