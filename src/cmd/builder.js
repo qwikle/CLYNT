@@ -1,6 +1,7 @@
 import { writeFile, readFile, mkdir, access } from 'fs/promises';
 import { join } from 'path';
-
+import chalk from 'chalk';
+import boxen from 'boxen';
 const templatePath = join(import.meta.dirname, 'template');
 
 async function createRootWorkspaceJson({name, author, layers}){
@@ -81,7 +82,9 @@ async function hasPackagesFolder(){
     await access(`./packages`);
     return true;
   } catch {
-    console.log('It seems that you are not in the root folder of the monorepo structure');
+    console.log(boxen(`
+      ${chalk.redBright('It seems that you are not in the root folder of the monorepo structure')}
+    `,));
     process.exit();
   }
 }
